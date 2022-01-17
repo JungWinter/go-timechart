@@ -9,8 +9,6 @@ type Formatter interface {
 }
 
 type HalfHourIncrementFormatter struct {
-	cc Chars
-
 	fn func() Char
 }
 
