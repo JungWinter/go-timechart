@@ -2,6 +2,7 @@ package timechart
 
 import (
 	"testing"
+	"time"
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/stretchr/testify/assert"
@@ -83,4 +84,8 @@ func TestOverlapSchedules(t *testing.T) {
 			assert.Equal(t, tc.expected, got, cmp.Diff(tc.expected, got))
 		})
 	}
+}
+
+func newTime(h, m int) time.Time {
+	return NewTime(h, m, 0)
 }

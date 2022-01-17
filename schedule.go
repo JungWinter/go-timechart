@@ -10,6 +10,13 @@ type Schedule struct {
 	End   time.Time
 }
 
+func NewSchedule(start, end time.Time) Schedule {
+	return Schedule{
+		Start: start,
+		End:   end,
+	}
+}
+
 func (s Schedule) String() string {
 	return fmt.Sprintf("%s-%s", s.Start.Format("15:04"), s.End.Format("15:04"))
 }
@@ -89,6 +96,10 @@ func OverlapSchedules(ss []Schedule) []Schedule {
 		}
 	}
 	return append(exists, not...)
+}
+
+func NewTime(h, m, s int) time.Time {
+	return time.Date(1, 1, 1, h, m, s, 0, time.UTC)
 }
 
 // timeGT returns t1 is greater than t2.

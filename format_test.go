@@ -219,7 +219,3 @@ func TestNewHalfHourIncrementFormatter(t *testing.T) {
 	})
 
 }
-
-func newTime(h, m int) time.Time {
-	return time.Date(1, 1, 1, h, m, 0, 0, time.UTC)
-}
