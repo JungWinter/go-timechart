@@ -1,6 +1,8 @@
 package timechart
 
-import "time"
+import (
+	"time"
+)
 
 type Formatter interface {
 	Format([]Schedule) string
@@ -26,7 +28,13 @@ func (f HalfHourIncrementFormatter) FormatNow(ss []Schedule) string {
 
 func (f HalfHourIncrementFormatter) FormatWithTime(ss []Schedule, t time.Time) string {
 	base := f.fill(ss)
-	i := f.timeToIndex(t)
+	i := f.timeToIndex(t.Round(time.Hour))
+	if i > 0 {
+		i -= 1
+	}
+	if t.Hour() == 12 && t.Minute() > 0 {
+		i += 1
+	}
 	base[i] = base[i].Now()
 	return base.String()
 }
