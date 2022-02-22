@@ -13,6 +13,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/JungWinter/go-timechart"
 )
@@ -29,6 +30,13 @@ func main() {
 	fmt.Println(got)
 
 	// Output: ├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤
+
+	now := time.Date(2022, 2, 1, 10, 0, 0, 0, time.UTC)
+
+	got = f.FormatWithTime(ss, now)
+	fmt.Println(got)
+
+	// Output: ├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──╂──┼──┤├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤
 }
 
 ```
