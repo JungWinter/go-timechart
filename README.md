@@ -1,5 +1,7 @@
 # go-timechart
 
+[![Actions Status](https://github.com/JungWinter/go-timechart/workflows/ci/badge.svg)](https://github.com/JungWinter/go-timechart/actions)
+
 ## Install
 
 ```shell

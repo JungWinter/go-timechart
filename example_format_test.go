@@ -23,22 +23,6 @@ func ExampleHalfHourIncrementFormatter_Format() {
 
 func ExampleHalfHourIncrementFormatter_FormatWithTime() {
 	f := timechart.NewHalfHourIncrementFormatter(timechart.NewUnicodeChar)
-	ss := []timechart.Schedule{
-		{
-			timechart.NewTime(0, 30, 0),
-			timechart.NewTime(5, 30, 0),
-		},
-	}
-	now := time.Date(2022, 2, 1, 10, 0, 0, 0, time.UTC)
-
-	got := f.FormatWithTime(ss, now)
-	fmt.Println(got)
-
-	// Output: ├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──╂──┼──┤├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤
-}
-
-func ExampleMultipleTimeChart() {
-	f := timechart.NewHalfHourIncrementFormatter(timechart.NewUnicodeChar)
 	sss := [][]timechart.Schedule{
 		{
 			{
