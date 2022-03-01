@@ -87,7 +87,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 	cases := []struct {
 		name      string
 		schedules []Schedule
-		t time.Time
+		t         time.Time
 		expected  string
 	}{
 		{
@@ -96,7 +96,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 				{newTime(0, 30), newTime(5, 30)},
 				{newTime(12, 30), newTime(17, 30)},
 			},
-			t:         time.Date(1970, 1, 1, 5, 0, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 1, 5, 0, 0, 0, time.UTC),
 			expected: "├─━┿━━┿━━┿━━┿━━╋━─┼──┼──┼──┼──┼──┼──┤├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤",
 		},
 		{
@@ -105,7 +105,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 				{newTime(0, 30), newTime(5, 30)},
 				{newTime(12, 30), newTime(17, 30)},
 			},
-			t:         time.Date(1970, 1, 1, 5, 30, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 1, 5, 30, 0, 0, time.UTC),
 			expected: "├─━┿━━┿━━┿━━┿━━┿━─╂──┼──┼──┼──┼──┼──┤├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤",
 		},
 		{
@@ -114,7 +114,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 				{newTime(0, 30), newTime(5, 30)},
 				{newTime(12, 30), newTime(17, 30)},
 			},
-			t:         time.Date(1970, 1, 1, 0, 0, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 1, 0, 0, 0, 0, time.UTC),
 			expected: "┠─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤",
 		},
 		{
@@ -123,7 +123,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 				{newTime(0, 30), newTime(5, 30)},
 				{newTime(12, 30), newTime(17, 30)},
 			},
-			t:         time.Date(1970, 1, 1, 9, 30, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 1, 9, 30, 0, 0, time.UTC),
 			expected: "├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──╂──┼──┤├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤",
 		},
 		{
@@ -132,7 +132,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 				{newTime(0, 30), newTime(5, 30)},
 				{newTime(12, 30), newTime(17, 30)},
 			},
-			t:         time.Date(1970, 1, 1, 12, 0, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 1, 12, 0, 0, 0, time.UTC),
 			expected: "├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┨├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤",
 		},
 		{
@@ -141,7 +141,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 				{newTime(0, 30), newTime(5, 30)},
 				{newTime(12, 30), newTime(17, 30)},
 			},
-			t:         time.Date(1970, 1, 1, 12, 1, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 1, 12, 1, 0, 0, time.UTC),
 			expected: "├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤┠─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤",
 		},
 		{
@@ -150,7 +150,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 				{newTime(0, 30), newTime(5, 30)},
 				{newTime(12, 30), newTime(17, 30)},
 			},
-			t:         time.Date(1970, 1, 1, 13, 0, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 1, 13, 0, 0, 0, time.UTC),
 			expected: "├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤├─━╋━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤",
 		},
 		{
@@ -158,7 +158,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 			schedules: []Schedule{
 				{newTime(16, 0), newTime(19, 0)},
 			},
-			t:         time.Date(1970, 1, 1, 16, 0, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 1, 16, 0, 0, 0, time.UTC),
 			expected: "├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤├──┼──┼──┼──╊━━┿━━┿━━┽──┼──┼──┼──┼──┤",
 		},
 		{
@@ -166,7 +166,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 			schedules: []Schedule{
 				{newTime(16, 0), newTime(19, 0)},
 			},
-			t:         time.Date(1970, 1, 1, 19, 0, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 1, 19, 0, 0, 0, time.UTC),
 			expected: "├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤├──┼──┼──┼──┾━━┿━━┿━━╉──┼──┼──┼──┼──┤",
 		},
 		{
@@ -175,7 +175,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 				{newTime(0, 30), newTime(5, 30)},
 				{newTime(12, 30), newTime(17, 30)},
 			},
-			t:         time.Date(1970, 1, 1, 23, 59, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 1, 23, 59, 0, 0, time.UTC),
 			expected: "├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┨",
 		},
 		{
@@ -184,7 +184,7 @@ func TestHalfHourIncrementFormatter_FormatWithTime(t *testing.T) {
 				{newTime(0, 30), newTime(5, 30)},
 				{newTime(12, 30), newTime(17, 30)},
 			},
-			t:         time.Date(1970, 1, 2, 0, 0, 0, 0, time.UTC),
+			t:        time.Date(1970, 1, 2, 0, 0, 0, 0, time.UTC),
 			expected: "├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┤├─━┿━━┿━━┿━━┿━━┿━─┼──┼──┼──┼──┼──┼──┨",
 		},
 	}

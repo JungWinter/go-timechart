@@ -3,8 +3,8 @@ GOPATH:=$(shell go env GOPATH)
 .PHONY: format
 ## format: format files
 format:
-	@go install golang.org/x/tools/cmd/goimports@latest
-	goimports -w .
+	@go install github.com/incu6us/goimports-reviser/v2@latest
+	goimports-reviser -file-path ./*.go -rm-unused
 	gofmt -s -w .
 	go mod tidy
 
